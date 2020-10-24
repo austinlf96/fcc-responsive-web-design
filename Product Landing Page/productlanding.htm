@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="top-of-page" class="section-container"></div>
+        <header id="header">
+            <div id="nav-container">
+                <nav id="nav-bar">
+                        <a class="nav-link" id="header-link" href="#top-of-page"><img id="header-img" src="https://res.cloudinary.com/teepublic/image/private/s--3A-dKl7S--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1483545438/production/designs/1029632_1.jpg">Fake doors</a>
+                        <a class="nav-link" id="about" href="#about-section">About</a>
+                        <a class="nav-link" id="doors" href="#doors-section">The Doors</a>
+                        <a class="nav-link" id="pricing" href="#pricing-section">Pricing</a>
+                        <a class="nav-link" id="reviews" href="#reviews-section">Reviews</a>              
+                        <button id="email-sign-up">Email Sign Up</button>
+                </nav> 
+                <div id="email-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <section id="before-submission" class="modal-section">
+                            <h3>Enter your email to receive updates and offers!</h3>
+                            <form id="form" action="https://www.freecodecamp.com/email-submit" method=POST onsubmit="thanks();" target="hidden-frame">                               
+                                    <input type="email" id="email" name="email" placeholder="janedoe@example.com" required>
+                                    <input type="submit" id="submit" class= "button" value="Sign up">                                                                
+                            </form>
+                            <iframe name="hidden-frame"></iframe>
+                        </section>
+                        <section id="after-submission" class="modal-section">
+                            <h2>Thank you! Your email has been submitted!</h2>
+                        </section>
+                    </div>                        
+                </div>
+                <script>
+                    //Gets button that submits email
+                    var emailsubmit = document.getElementById("submit");
+                    //Gets initial modal content before clicking submit
+                    var before = document.getElementById("before-submission");
+                    //Gets modal content AFTER clicking submit
+                    var after = document.getElementById("after-submission");
+                    //Gets Modal
+                    var modal = document.getElementById("email-modal");
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("email-sign-up");
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+                    
+                    // When the user clicks the button, open the modal 
+                    btn.onclick = function() {
+                        modal.style.display= "block"
+                        before.style.display= "block"
+                        after.style.display= "none";
+                    }
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    }
+                    //Closes modal when clicked outside of the modal
+                    window.onclick= function(event) {
+                        if (event.target == modal){
+                            modal.style.display= "none";
+                        }
+                    }
+                    //Clears form content after email submission
+                    function thanks() {
+                        before.style.display="none";
+                        after.style.display="block";
+                    } 
+                </script>
+            </div>
+        </header>
+        <main>
+            <h1><i>We hate real doors! How about you?</i></h1> 
+            <div id="about-container" class="section-container">
+                <section id="about-section">
+                    <h2>All about Fake Doors</h2>
+                    <article id="doors-video">
+                        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/4270c5qWPBg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </article>
+                    <article id="about-doors">
+                        <p> 
+                            Hey, are you tired of real doors, cluttering up your house, where you open 'em, 
+                            and they actually go somewhere and you go in another room? Get on down to "Real Fake Doors"!
+                            That's us. Fill a whole room up with 'em.  We have fake doors like you wouldn't believe! 
+                            What are you worried about? Come get fake doors. Call us up, and order some fake doors today. 
+                            Don't even hesitate, Don't even worry and don't even give it a second thought. That's our slogan. 
+                            See it on the bottom of the screen, below our name. Here's another slogan, right below that one. 
+                            What are you worried about? Come get fake doors! Get in here quick, get out quicker, with an arm 
+                            of fake doors in you arms. Don't even worry about it! Here's a video to repeat everything we just
+                            said! Get fake doors! 
+                        </p>
+                    </article>
+                </section>
+            </div>
+            
+            <div id="doors-section" class="section-container">
+                    <article id="door1" class="door-container">
+                        <img src="FakeDoor1.jpeg" class="door-image">
+                        <h2>Our first fake door! It doesn't open! It's fake!</h2>
+                        <button type="button" id="door1-button" class="select-button" value="I want this fake door!" onclick="alert('Seriously, It&#8217;s fake!');">I want this fake door!</button>
+                    </article>
+                    <article id="door2" class="door-container">
+                        <img src="FakeDoor2.jpeg" class="door-image">
+                        <h2>Our second fake door! It doesn't open! It's fake!</h2>
+                        <button type="button" id="door2-button" class="select-button" value="I want this fake door!" onclick="alert('Seriously, It&#8217;s fake!');">I want this fake door!</button>
+                    </article>
+                    <article id="door3" class="door-container">
+                        <img src="FakeDoor3.jpeg" class="door-image">
+                        <h2>Our third fake door! It doesn't open! It's fake!</h2>
+                        <button type="button" id="door3-button" class="select-button" value="I want this fake door!" onclick="alert('Seriously, It&#8217;s fake!');">I want this fake door!</button>
+                    </article>
+                    <article id="door4" class="door-container">
+                        <img src="FakeDoor4.jpeg" class="door-image">
+                        <h2>Our fourth fake door! It doesn't open! It's fake!</h2>
+                        <button type="button" id="door4-button" class="select-button" value="I want this fake door!" onclick="alert('Seriously, It&#8217;s fake!');">I want this fake door!</button>
+                    </article>
+            </div>
+            <div id="pricing-container" class="section-container">
+                <section id="pricing-section">
+                    <article id="pricing-contact">
+                        <h2>Prices for Fake Doors</h2>
+                        <p>
+                            Prices vary for fake doors by model, size, and distance! We'll install your fake door for you for an extra fee!
+                            Still interested? Great! Go on down to the contact section to contact us about fake doors! You're gonna love your new fake door! 
+                        </p>
+                        <h2>Contact Us</h2>
+                        <p>
+                            Glad to see you here! We love our fake doors and we know you'll love them too! To contact us, call the fake fake doors number below!
+                        </p>
+                        
+                        <h3>1-FAKE-DOORS</h3>
+                        <p>
+                            Don't have time for a phone call because your busy dealing with real doors? No problem! Email us at 
+                        </p>
+                        <h3>fakedoors@fakedoors.com</h3>
+                    </article>
+                </section>
+            </div>
+            <div id="reviews-container" class="section-container">
+                <section id="reviews-section">
+                    <h2>Fake reviews</h2>
+                    <article class="fake-review">
+                        <h2>Rick Sanchez says</h2>
+                        <p>
+                            "I absolutely love my fake door! It's off the hook, yo! Literally! It's a fake door!
+                            Finally, I can have a door that goes nowhere!"
+                        </p>
+                    </article>
+                    <article class="fake-review">
+                        <h2>Morty Smith says</h2>
+                        <p>
+                            "Uhh, Geez Rick. I sure love my fake door! Jessica loves it too! She says its the only 
+                            knob I have she loves to grab because it's fake!
+                        </p>
+                    </article>
+                    <article class="fake-review">
+                        <h2>Gerry Smith says</h2>
+                        <p>
+                            "I hate my fake door! It doesn't open and it doesn't go anywhere!"
+                            We're sorry Gerry, please consider buying a real door if you want to leave space daycare!
+                        </p>
+                    </article>
+                    <article class="fake-review">
+                        <h2>Summer Smith says</h2>
+                        <p>
+                            "I don't really see the point of a fake door, but my fake door works just like it said it would. 
+                            It's fake and it goes nowhere. Wooooo."
+                        </p>
+                    </article>
+                    <article class="fake-review">
+                        <h2>Beth Smith says</h2>
+                        <p>
+                            "Morty won't stop playing with his fake door! He loves it! My husband doesn't like his but between you and me
+                            he's not the most understanding guy in the world. I don't know why I married him. Thanks for showing me the truth, Fake Doors!"
+                        </p>
+                    </article>
+                </section>
+            </div>        
+        </main>
+        <footer id="footer">
+            <h1>Fake Doors</h1>
+            <h2>
+                "Don't even hesitate, Don't even worry and don't even give it a second thought!"
+                <br><br>
+                "What are you worried about? Come get fake doors! Get in here quick, get out quicker, with an arm 
+                of fake doors in you arms. Don't even worry about it!"
+            </h2>
+        </footer>
+    </body>
+</html>
